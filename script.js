@@ -16,7 +16,14 @@ function generatePassword(){
   typeNum=confirm ('Would you like your password to contain numbers?')
   typeSpecial=confirm ('Would you like your password to contain special characters?')
   // these are to help us confirm what kind of characters are going to be used for the password
-  var lowerChar = Array.from(Array(26)).map((e,i) => i + 65)
+
+  var lowerChar = [...Array(26)].map((_,i) => String.fromCharCode(i+97));
+  var upperChar = [...Array(26)].map((_,i) => String.fromCharCode(i+capital ? 65: 97));
+  var numChar = [...Array(10).keys()]
+  var specialChar = ["!","@","#","$","%","^","&","*"]
+
+  
+  
 
 
 }
