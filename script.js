@@ -11,18 +11,45 @@ function generatePassword(){
         alert('Please enter a valid number')
       }// This prompt allows the user to pick the amount of characters for the password and has them enter valid answers
 
-  typeLower=confirm('would you like your password to contain lowercase letters?')
-  typeUpper=confirm ('Would you like your password to contain uppercase letters?')
-  typeNum=confirm ('Would you like your password to contain numbers?')
-  typeSpecial=confirm ('Would you like your password to contain special characters?')
+  var  typeLower=window.confirm ("would you like your password to contain lowercase letters?")
+  var typeUpper=window.confirm ("Would you like your password to contain uppercase letters?")
+  var typeNum=window.confirm ("Would you like your password to contain numbers?")
+  var typeSpecial=window.confirm ("Would you like your password to contain special characters?")
   // these are to help us confirm what kind of characters are going to be used for the password
 
-  var lowerChar = [...Array(26)].map((_,i) => String.fromCharCode(i+97));
-  var upperChar = [...Array(26)].map((_,i) => String.fromCharCode(i+capital ? 65: 97));
-  var numChar = [...Array(10).keys()]
-  var specialChar = ["!","@","#","$","%","^","&","*"]
+  var lowerChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  var upperChar = ["A","B"];
+  var numChar = [1,2,3,4,5,6,7,8,9,0];
+  var specialChar = ["!","@","#","$","%","^","&","*"];
+  var passMixer = []
+//these are the different types of characters that are offered to
+  
 
   
+  if (typeLower){
+   passMixer = passMixer.concat(lowerChar)
+  } 
+  if (typeUpper){
+   passMixer =  passMixer.concat(upperChar)
+  } 
+  if (typeNum){
+   passMixer = passMixer.concat(numChar)
+  }
+   if (typeSpecial){
+   passMixer = passMixer.concat(specialChar)
+  }
+
+console.log(passMixer)
+  var printedPass = []
+for (var i = 0; i < passLength; i++) {
+  var randomPass = Math.floor(Math.random()*passMixer.length);
+  var randomValue =passMixer[randomPass]
+  printedPass.push(randomValue)
+
+}
+console.log(printedPass)
+var actualPass = printedPass.join ("")
+return actualPass
   
 
 
