@@ -4,13 +4,20 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function generatePassword(){
   passLength = prompt ('Choose the amount of characters youd like your password to have (8-128)')
-  if (passLength<8||passLength>128){
+    if (passLength<8||passLength>128){
     alert ('Please select a password length between 8 and 128 characters ')
-  } else if (isNaN(passLength)){
-  alert('Please enter a valid number')
-  } // This prompt allows the user to pick the amount of characters for the password and has them enter valid answers
+    }
+      else if (isNaN(passLength)){
+        alert('Please enter a valid number')
+      }// This prompt allows the user to pick the amount of characters for the password and has them enter valid answers
 
-  
+  typeLower=confirm('would you like your password to contain lowercase letters?')
+  typeUpper=confirm ('Would you like your password to contain uppercase letters?')
+  typeNum=confirm ('Would you like your password to contain numbers?')
+  typeSpecial=confirm ('Would you like your password to contain special characters?')
+  // these are to help us confirm what kind of characters are going to be used for the password
+  var lowerChar = Array.from(Array(26)).map((e,i) => i + 65)
+
 
 }
 
